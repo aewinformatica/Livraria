@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2020-05-23T06:00:01 -->
+<!-- 2020-05-24T22:16:28 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Livros" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="d16ec4d0-5d85-4d64-91d9-6de26cbb5a3f">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -12,6 +12,7 @@
 	<field name="isbn" class="java.lang.String"/>
 	<field name="editora" class="java.lang.String"/>
 	<field name="descricao" class="java.lang.String"/>
+	<field name="cliente.cli_nome" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -40,9 +41,9 @@
 		<band height="30" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="120" splitType="Stretch">
+		<band height="137" splitType="Stretch">
 			<staticText>
-				<reportElement key="staticText-2" mode="Transparent" x="6" y="5" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="8cb6c109-204f-4454-b910-790052808940"/>
+				<reportElement key="staticText-2" mode="Transparent" x="6" y="29" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="8cb6c109-204f-4454-b910-790052808940"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -56,7 +57,7 @@
 				<text><![CDATA[Título:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-2" mode="Transparent" x="6" y="26" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="3a36fbc9-9328-4042-885d-d76609fda266"/>
+				<reportElement key="staticText-2" mode="Transparent" x="6" y="50" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="3a36fbc9-9328-4042-885d-d76609fda266"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -70,7 +71,7 @@
 				<text><![CDATA[Autor:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-2" mode="Transparent" x="6" y="48" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="dee8d7ac-54a9-4eca-a0a4-32e6d5a56bfa"/>
+				<reportElement key="staticText-2" mode="Transparent" x="6" y="72" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="dee8d7ac-54a9-4eca-a0a4-32e6d5a56bfa"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -84,7 +85,7 @@
 				<text><![CDATA[ISBN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-2" mode="Transparent" x="6" y="91" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="d3e3d2ce-0af8-462b-8c39-83c9badd80df"/>
+				<reportElement key="staticText-2" mode="Transparent" x="6" y="115" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="d3e3d2ce-0af8-462b-8c39-83c9badd80df"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -98,7 +99,7 @@
 				<text><![CDATA[Descrição:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-2" mode="Transparent" x="6" y="70" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="0651760f-1f5f-4866-b9be-2fa402d2730d"/>
+				<reportElement key="staticText-2" mode="Transparent" x="6" y="94" width="113" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="0651760f-1f5f-4866-b9be-2fa402d2730d"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -112,7 +113,7 @@
 				<text><![CDATA[Editora:]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-1" mode="Transparent" x="120" y="4" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="199ff380-8fd7-40b3-9483-8d836ca513d9"/>
+				<reportElement key="textField-1" mode="Transparent" x="120" y="28" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="199ff380-8fd7-40b3-9483-8d836ca513d9"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -126,7 +127,7 @@
 				<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" mode="Transparent" x="121" y="47" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="b2ad7a81-be0d-48a8-bb9f-9a1bf0d44e1d"/>
+				<reportElement key="textField-1" mode="Transparent" x="121" y="71" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="b2ad7a81-be0d-48a8-bb9f-9a1bf0d44e1d"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -140,7 +141,7 @@
 				<textFieldExpression><![CDATA[$F{isbn}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" mode="Transparent" x="121" y="69" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="5d491c58-e8a7-4517-a024-fd10ae26bd01"/>
+				<reportElement key="textField-1" mode="Transparent" x="121" y="93" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="5d491c58-e8a7-4517-a024-fd10ae26bd01"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -154,7 +155,7 @@
 				<textFieldExpression><![CDATA[$F{editora}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" mode="Transparent" x="121" y="91" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="5b431ff0-b179-406b-8b74-10d7b2c1ea9a"/>
+				<reportElement key="textField-1" mode="Transparent" x="121" y="115" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="5b431ff0-b179-406b-8b74-10d7b2c1ea9a"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -168,7 +169,7 @@
 				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" mode="Transparent" x="121" y="26" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="b6b4731c-c5a6-41c9-b484-cdc0c30e278f"/>
+				<reportElement key="textField-1" mode="Transparent" x="121" y="50" width="410" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="b6b4731c-c5a6-41c9-b484-cdc0c30e278f"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -180,6 +181,25 @@
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{autor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="8" width="113" height="18" uuid="b2e65e38-4fa3-40b8-ae74-79a4c2f36bc8">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="10" width="406" height="17" uuid="9d346551-0f71-4f12-a1ab-87e9a4a1f25d"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente.cli_nome}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
