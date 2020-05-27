@@ -16,17 +16,17 @@ public class Inicio {
 
     public void exibirRelatorio() {
         // Caminho do .jasper
-        String caminhoRelJasper = "Livros.jasper";
+        String caminhoRelJasper = "Orcamentos.jasper";
 
         // Lista com beans
-        List listaLivros = getLivros();
+        List listaOrcamentos = getOrcamentos();
 
         // Stream com o .jasper
         InputStream relJasper = this.getClass().getClassLoader().getResourceAsStream("relatorios/" + caminhoRelJasper);
 
         // O datasource
         JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(
-                listaLivros);
+                listaOrcamentos);
 
         // Parametros do relatorios
         Map parametros = new HashMap();
@@ -44,60 +44,67 @@ public class Inicio {
 
     }
 
-    public List getLivros() {
-        List listaLivros = new ArrayList();
+    public List getOrcamentos() {
+        List listaOrcamentos = new ArrayList();
 
         Cliente cliente = new Cliente();
 
         cliente.setCli_nome("WAGNER");
 
-        LivroDTO livroDTO = new LivroDTO();
+        Livro livro = new Livro();
 
-        livroDTO.setCliente(cliente);
-        livroDTO.setTitulo("Use a cabeça! Padrões de Projeto - Design Patterns");
-        livroDTO.setAutor("Freeman, Eric / Freeman, Elisabeth");
-        livroDTO.setIsbn("8576080869");
-        livroDTO.setEditora("Alta Books");
-        livroDTO
+        livro.setTitulo("Use a cabeça! Padrões de Projeto - Design Patterns");
+        livro.setAutor("Freeman, Eric / Freeman, Elisabeth");
+        livro.setIsbn("8576080869");
+        livro.setEditora("Alta Books");
+        livro
                 .setDescricao("Como você sabe que não quer reinventar a roda (ou, "
                         + "pior, um pneu furado), "
                         + "então você busca padrões de projetos");
 
-        listaLivros.add(livroDTO);
-
+        OrcamentoDTO orcamentoDTO = new OrcamentoDTO();
+        orcamentoDTO.setCliente(cliente);
+        orcamentoDTO.setLivro(livro);
+        listaOrcamentos.add(orcamentoDTO);
 
         cliente = new Cliente();
         cliente.setCli_nome("ALTIVO");
-        
-        livroDTO = new LivroDTO();
-        livroDTO.setCliente(cliente);
-        livroDTO.setTitulo("Entendendo e Dominando o Linux");
-        livroDTO.setAutor("Morimoto, Carlos");
-        livroDTO.setIsbn("8589535339");
-        livroDTO.setEditora("Digerati");
-        livroDTO
-                .setDescricao("Como o nome diz, este livroDTO é uma obra destinada a "
+
+        livro = new Livro();
+        livro.setTitulo("Entendendo e Dominando o Linux");
+        livro.setAutor("Morimoto, Carlos");
+        livro.setIsbn("8589535339");
+        livro.setEditora("Digerati");
+        livro
+                .setDescricao("Como o nome diz, este livro é uma obra destinada a "
                         + "todos aqueles que "
                         + "pretendem conhecer na prática e em detalhes os "
                         + "principais recursos oferecidos pelo Linux");
-        listaLivros.add(livroDTO);
+        
+        orcamentoDTO = new OrcamentoDTO();
+        orcamentoDTO.setCliente(cliente);
+        orcamentoDTO.setLivro(livro);
+        listaOrcamentos.add(orcamentoDTO);
 
         cliente = new Cliente();
         cliente.setCli_nome("MARIA");
 
-        livroDTO = new LivroDTO();
-        livroDTO.setCliente(cliente);
-        livroDTO.setTitulo("Guia de Certificação em Java - Exame CX-310-035");
-        livroDTO.setAutor("Pereira, Rafael");
-        livroDTO.setIsbn("8573934263");
-        livroDTO.setEditora("Ciência Moderna");
-        livroDTO.setDescricao("Este Guia de Certificação em Java é um livroDTO "
+        livro = new Livro();
+        livro.setTitulo("Guia de Certificação em Java - Exame CX-310-035");
+        livro.setAutor("Pereira, Rafael");
+        livro.setIsbn("8573934263");
+        livro.setEditora("Ciência Moderna");
+        livro.setDescricao("Este Guia de Certificação em Java é um livro "
                 + "fundamental para preparar os"
                 + " candidatos ao exame de programador Java da Sun, "
                 + "a primeira e mais "
                 + "requisitada certificação desta tecnologia.");
-        listaLivros.add(livroDTO);
-        return listaLivros;
+        
+        orcamentoDTO = new OrcamentoDTO();
+        orcamentoDTO.setCliente(cliente);
+        orcamentoDTO.setLivro(livro);
+        listaOrcamentos.add(orcamentoDTO);
+        return listaOrcamentos;
     }
 
     public static void main(String[] args) {
